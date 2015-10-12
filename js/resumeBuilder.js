@@ -98,7 +98,7 @@ var project = {
   {
     'title':'Patent US 8812960 B1: Cohort-based presentation of user interaction data',
     'dates':'Publication: August 19, 2014 - Filing: December 3, 2013',
-    'description':'Abstract: An interactive, customizable, user interaction data analysis system is disclosed. The system may be configured to provide cohort-based analysis and/or graphical visualizations of user interaction data to a system operator. User interaction data may be obtained, for example, as users interact with one or more software applications. In various embodiments, interactive and customizable visualizations and analysis provided by the system may be based on user interaction data aggregated across groups of users (also referred to as cohorts of users), across particular time frames, and/or from particular software and/or computer-based applications. According to various embodiments, the system may enable insights into, for example, user interaction patterns, the frequency of software application features accessed, the performance of various aspects of software applications, and/or crashes of software applications, among others.',
+    'description':'<i>Abstract</i>: An interactive, customizable, user interaction data analysis system is disclosed. The system may be configured to provide cohort-based analysis and/or graphical visualizations of user interaction data to a system operator. User interaction data may be obtained, for example, as users interact with one or more software applications. In various embodiments, interactive and customizable visualizations and analysis provided by the system may be based on user interaction data aggregated across groups of users (also referred to as cohorts of users), across particular time frames, and/or from particular software and/or computer-based applications. According to various embodiments, the system may enable insights into, for example, user interaction patterns, the frequency of software application features accessed, the performance of various aspects of software applications, and/or crashes of software applications, among others.',
     'images': [
     'images/cohort1.png'
     ]
@@ -106,7 +106,7 @@ var project = {
   {
     'title':'Patent US 20140282121 A1: Systems and methods for providing a tagging interface for external content',
     'dates':'Publication: September 18, 2014 - Filing: December 19, 2013',
-    'description':'Abstract: Computer-implemented systems and methods are disclosed for providing a tagging interface for tagging external content. In accordance with some embodiments, a method is provided for tagging content external to a database system. The method comprises accessing the external content via a web browser of an electronic device. The method also comprises enhancing the web browser by providing a tagging interface for tagging at least a portion of the external content. The method further comprises receiving created tag associated with a tagged portion of the external document content, and exporting the external content and the received tag to the database system. The tagging interface can also provide an option to export the created tag to an internal database system.',
+    'description':'<i>Abstract</i>: Computer-implemented systems and methods are disclosed for providing a tagging interface for tagging external content. In accordance with some embodiments, a method is provided for tagging content external to a database system. The method comprises accessing the external content via a web browser of an electronic device. The method also comprises enhancing the web browser by providing a tagging interface for tagging at least a portion of the external content. The method further comprises receiving created tag associated with a tagged portion of the external document content, and exporting the external content and the received tag to the database system. The tagging interface can also provide an option to export the created tag to an internal database system.',
     'images': [
     'images/tagging1.png',
     'images/tagging2.png'
@@ -169,13 +169,6 @@ project.display = function() {
   for (var i = 0; i < len; i++) {
     $('#projects').append(HTMLprojectStart);
     var p = project.project[i];
-    var formattedProjectTitle = HTMLprojectTitle.replace('%data%', p.title);
-    var formattedProjectDates = HTMLprojectDates.replace('%data%', p.dates);
-    var formattedProjectDescription = HTMLprojectDescription.replace('%data%', p.description);
-
-    var formattedProject = formattedProjectTitle + formattedProjectDates + formattedProjectDescription;
-    $('.project-entry:last').append(formattedProject);
-
     if (p.images.length > 0) {
       var imgLen = p.images.length;
       for (var j = 0; j < imgLen; j++) {
@@ -183,6 +176,14 @@ project.display = function() {
         $('.project-entry:last').append(formattedImage);
       }
     }
+    var formattedProjectTitle = HTMLprojectTitle.replace('%data%', p.title);
+    var formattedProjectDates = HTMLprojectDates.replace('%data%', p.dates);
+
+    var formattedProject = formattedProjectTitle + formattedProjectDates;
+    $('.project-entry:last').append(formattedProject);
+
+    var formattedProjectDescription = HTMLprojectDescription.replace('%data%', p.description);
+  $('.project-entry:last').append(formattedProjectDescription);
   }
 };
 project.display();

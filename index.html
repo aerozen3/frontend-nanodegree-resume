@@ -17,12 +17,12 @@ need to load. You'll see a lot of <link>s to CSS files for styles and
 <head>
   <!-- This tells the browser how to read the document. -->
   <meta charset="utf-8">
-
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- Tells the browser what the title of this page should be. -->
-  <title>Resume</title>
+  <title>Zen's Resume</title>
 
-  <!-- Load the page styles. -->
-  <link href="css/style.css" rel="stylesheet">
+
 
   <!--
   jQuery is a common JavaScript library for reading and making changes to the
@@ -37,10 +37,19 @@ need to load. You'll see a lot of <link>s to CSS files for styles and
   the DOM. jQuery is fast and easy to use, but it doesn't do anything
   you can't accomplish with vanilla (regular) JavaScript.
   -->
-  <script src="js/jQuery.js"></script>
+  <!-- <script src="js/jQuery.js"></script> -->
+  <script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
+
+  <script type="text/javascript" src="js/bootstrap.min.js"></script>
+
+  <!-- Load the page styles. -->
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link href="css/style.css" rel="stylesheet">
 
   <!-- More on helper.js in the class -->
   <script src="js/helper.js"></script>
+
+
 
   <!--
   Uncomment the <script> tag below when you're ready to add an interactive
@@ -51,7 +60,7 @@ need to load. You'll see a lot of <link>s to CSS files for styles and
   <meta name="viewport" content="width=device-width">
 </head>
 <body>
-  <div id="main">
+  <div id="container">
 
     <!--
     Everything from here to the <script> tag below is the skeleton of your
@@ -59,21 +68,68 @@ need to load. You'll see a lot of <link>s to CSS files for styles and
     resume below. You can pretty easily figure out what each section will
     display by looking at the id or at what's written between the <h2> tags.
     -->
-    <div id="header" class="center-content clear-fix clear-ul">
-      <ul id="topContacts" class="flex-box"></ul>
+    <div class = "row">
+      <div id="header" class="center-content clear-fix clear-ul col-md-12">
+        <ul id="topContacts" class="flex-box"></ul>
+      </div>
+    </div>
+    <div class = "row">
+      <div class = "col-md-12">
+          <nav class="navbar navbar-default">
+            <div class="container-fluid">
+              <!-- Brand and toggle get grouped for better mobile display -->
+              <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                  <span class="sr-only">Toggle navigation</span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">Zen</a>
+              </div>
+
+              <!-- Collect the nav links, forms, and other content for toggling -->
+              <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                  <li class="active"><a href="#">Home<span class="sr-only">(current)</span></a></li>
+                  <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Portfolio <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                      <li><a href="https://github.com/udacity/Appify">Appify</a></li>
+                      <li><a href="https://github.com/udacity/Sunflower">Sunflower</a></li>
+                      <li><a href="https://github.com/udacity/Bokeh">Bokeh</a></li>
+                    </ul>
+                  </li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                  <li><a href="#">About</a></li>
+                  <li><a href="#">Contact</a></li>
+                </ul>
+              </div><!-- /.navbar-collapse -->
+            </div><!-- /.container-fluid -->
+          </nav>
+        </div>
     </div>
     <div style="clear: both;"></div>
-    <div id="workExperience" class="gray">
-      <h2>Work Experience</h2>
+    <div class = "row gray">
+      <div id="workExperience" class="col-md-12">
+        <h2>Work Experience</h2>
+      </div>
     </div>
-    <div id="projects">
-      <h2>Projects</h2>
+    <div class = "row">
+      <div id="projects" class="col-md-12">
+        <h2>Projects</h2>
+      </div>
     </div>
-    <div id="education" class="gray">
-      <h2>Education</h2>
-    </div>
-    <div id="mapDiv">
-      <h2>Where I've Lived and Worked</h2>
+    <div class = "row gray">
+      <div id="education" class="col-md-3">
+        <h2>Education</h2>
+      </div>
+      <div class="col-md-9">
+        <div id="mapDiv">
+          <h2>Where I've Lived and Worked</h2>
+        </div>
+      </div>
     </div>
     <div id="lets-connect" class="dark-gray">
       <h2 class="orange center-text">Let's Connect</h2>
@@ -120,13 +176,13 @@ need to load. You'll see a lot of <link>s to CSS files for styles and
       document.getElementById('header').style.display = 'none';
     }
     if(document.getElementsByClassName('work-entry').length === 0) {
-      document.getElementById('workExperience').style["background-color"] = "black";
+      document.getElementById('workExperience').style["background-color"] = 'none';
     }
     if(document.getElementsByClassName('project-entry').length === 0) {
-      document.getElementById('projects').style["background-color"] = "black";
+      document.getElementById('projects').style["background-color"] = 'none';
     }
     if(document.getElementsByClassName('education-entry').length === 0) {
-      document.getElementById('education').style.backgroundColor = "black";
+      document.getElementById('education').style.backgroundColor = 'none';
     }
     if(document.getElementsByClassName('flex-item').length === 0) {
       document.getElementById('lets-connect').style.display = 'none';

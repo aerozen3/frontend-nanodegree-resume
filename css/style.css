@@ -1,3 +1,7 @@
+/** {
+   outline: 1px solid red !important;
+}*/
+
 body,
 div,
 ul,
@@ -9,9 +13,11 @@ h3,
 h4,
 h5,
 h6 {
-  padding:0;
-  margin:0;
   font-family: "Roboto", sans-serif;
+}
+
+.clear-float {
+  clear: right;
 }
 
 .clear-fix {
@@ -26,7 +32,7 @@ h6 {
 
 h1 {
   font-size: 40px;
-  color: #f5a623;
+  color: #0072e2;
   line-height: 48px;
   display: inline;
 }
@@ -40,10 +46,11 @@ h2 {
 }
 
 h3 {
-  font-style: italic;
+  font-style: bold;
   font-size: 20px;
-  color: #000;
-  line-height: 22px;
+  color: #999;
+  line-height: 29px;
+  padding: 10px;
 }
 
 h4 {
@@ -95,21 +102,21 @@ a {
 .welcome-message {
   font-style: italic;
   font-size: 18px;
-  color: #f3f3f3;
+  color: #0072e2;
   line-height: 28px;
 }
 
 #skills-h3 {
-  color: #f5ae23;
+  color: #0072e2;
   display: none;
 }
 
-.orange {
-  background-color: #f5ae23;
+.blue {
+  background-color: rgba(0, 114, 226, 0.22);
 }
 
-.orange-text {
-  color: #f5ae23;
+.blue-text {
+  color: #0072e2;
 }
 
 .white-text {
@@ -120,16 +127,19 @@ a {
 .gray {
   background-color: #f3f3f3;
   padding-bottom: 10px;
-  clear:both;
 }
 
 .dark-gray {
   background-color: #4a4a4a;
 }
 
+#navbar {
+  padding: 0 5%;
+}
 /* TODO: Replace with image later */
 #header {
-  background-color: #484848;
+  padding: 0 5%;
+  background-color: rgba(0, 114, 226, 0.22);
 }
 
 .flex-box {
@@ -138,11 +148,11 @@ a {
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-around;
-  padding: 10px;
+  padding: 3px;
 }
 
 .center-content {
-  padding: 2.5% 5%;
+  margin-top: 2%;
 }
 
 .clear-ul {
@@ -151,17 +161,27 @@ a {
 
 .biopic {
   float: left;
-  padding: 10px;
+  margin: 10px;
+  padding: 0px;
   width: 200px;
   display: none;
-}
+  border-radius: 15px;
+  border-width: 4px;
+  border-style: solid;
+  border-color: #8bb7e2;
+  }
 
-img {
-  padding: 10px;
+.img-right {
+  float: right;
+  margin: 0 0 10px 10px;
 }
 
 span {
   padding: 5px;
+}
+
+.caret {
+  padding: 0px;
 }
 
 #lets-connect {
@@ -201,7 +221,8 @@ span {
 }
 
 #mapDiv {
-  height: 400px;
+  /*height: 300px;*/
+  height: 800px;
   width: 100%;
   padding-bottom: 5%;
 }
