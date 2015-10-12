@@ -3,7 +3,7 @@ This is empty on purpose! Your code to build the resume will go here.
 */
 
 var bio = {
- 	'name':'Zen Sun',
+ 	'name':'Zennard Sun',
  	'role':'Web Dev',
  	'contacts' : {
     'email':'zennard [[at]] gmail.com',
@@ -23,14 +23,14 @@ var education = {
     'degree':'Masters of Engineering',
     'dates':2005,
     'location':'Ithaca, NY',
-    'major':['CS']
+    'major':['Computer Science']
   },
   {
     'name':'Cornell University',
     'degree':'BS',
     'dates':2004,
     'location':'Ithaca, NY',
-    'major':['CS','ECE']
+    'major':['Computer Science','Electrical & Computer Engineering']
   }
   ],
   'onlineCourses': [
@@ -162,41 +162,7 @@ work.display = function() {
 work.display();
 
 
-$(document).click(function(loc) {
-	var x = loc.pageX;
-	var y = loc.pageY;
-	logClicks(x,y);
-});
 
-function locationizer(work_obj) {
-  var locs = [];
-  var len = work_obj.jobs.length;
-  for (var i = 0; i < len; i++) {
-    locs.push((work_obj.jobs[i]).location);
-  }
-  return locs;
-}
-
-$('#main').append(internationalizeButton);
-
-function inName() {
-  var finalName = bio.name;
-  // Your code goes here!
-
-  var firstLetter = finalName.slice(0,1);
-  firstLetter = firstLetter.toUpperCase();
-
-  var spaceIdx = finalName.indexOf(' ');
-  var firstName = finalName.slice(1,spaceIdx);
-  firstName = firstName.toLowerCase();
-  firstName = firstLetter + firstName;
-  var lastNameAndSpace = finalName.slice(spaceIdx,finalName.length);
-  lastNameAndSpace = lastNameAndSpace.toUpperCase();
-
-  finalName = firstName + lastNameAndSpace;
-  // Don't delete this line!
-  return finalName;
-}
 
 project.display = function() {
   var len = project.project.length;
@@ -266,3 +232,42 @@ education.display = function() {
 education.display();
 
 $('#mapDiv').append(googleMap);
+
+
+//Utility functions
+
+$(document).click(function(loc) {
+  var x = loc.pageX;
+  var y = loc.pageY;
+  logClicks(x,y);
+});
+
+function locationizer(work_obj) {
+  var locs = [];
+  var len = work_obj.jobs.length;
+  for (var i = 0; i < len; i++) {
+    locs.push((work_obj.jobs[i]).location);
+  }
+  return locs;
+}
+
+$('#main').append(internationalizeButton);
+
+function inName() {
+  var finalName = bio.name;
+  // Your code goes here!
+
+  var firstLetter = finalName.slice(0,1);
+  firstLetter = firstLetter.toUpperCase();
+
+  var spaceIdx = finalName.indexOf(' ');
+  var firstName = finalName.slice(1,spaceIdx);
+  firstName = firstName.toLowerCase();
+  firstName = firstLetter + firstName;
+  var lastNameAndSpace = finalName.slice(spaceIdx,finalName.length);
+  lastNameAndSpace = lastNameAndSpace.toUpperCase();
+
+  finalName = firstName + lastNameAndSpace;
+  // Don't delete this line!
+  return finalName;
+}
