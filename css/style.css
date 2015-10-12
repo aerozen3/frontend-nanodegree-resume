@@ -24,6 +24,7 @@ h6 {
   overflow: auto;
 }
 
+.navbar-default,
 .education-entry,
 .work-entry,
 .project-entry {
@@ -99,7 +100,6 @@ p {
 a {
   color: #1199c3;
   text-decoration: none;
-  margin-top: 10px;
   display: block;
 }
 
@@ -110,7 +110,7 @@ a {
   line-height: 28px;
 }
 
-#skills-h3 {
+.skills-lead {
   color: #0072e2;
   display: none;
   margin-bottom: 3px;
@@ -118,16 +118,24 @@ a {
 }
 
 .blue {
-  background-color: rgba(0, 114, 226, 0.22);
+  background-color: rgba(0, 114, 226, 0.15);
 }
 
 .blue-text {
   color: #0072e2;
 }
 
-.white-text {
+.white-outline-text {
+    color: white;
+    text-shadow:
+    -1px -1px 0 #000,
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+    1px 1px 0 #000;
+}
+.gray-text {
   font-weight: bold;
-  color: #fff;
+  color: #999;
 }
 
 .gray {
@@ -143,11 +151,21 @@ a {
   padding-top: 0px;
   padding-bottom: 0px;
   margin-bottom: 0px;
+
 }
+
+#navbar-brand {
+  margin-left: 0px;
+}
+
+.container-fluid {
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
 /* TODO: Replace with image later */
 #header {
-  padding: 0 5%;
-  background-color: rgba(0, 114, 226, 0.22);
+  background-color: rgba(0, 114, 226, 0.15);
 }
 
 .flex-box {
@@ -160,11 +178,16 @@ a {
 }
 
 .center-content {
-  margin-top: 2%;
+  margin-top: 1.5%;
+  padding: 0 5%;
 }
 
 .clear-ul {
   list-style-type: none;
+}
+
+.circle-ul {
+  list-style-type: circle;
 }
 
 .biopic {
@@ -241,8 +264,88 @@ span {
 }
 
 @media only screen and (min-width: 750px) {
-  #skills-h3,
+  .skills-lead,
   .biopic {
     display: block;
   }
+}
+
+
+/*
+ * Text popups on images taken from http://maketea.co.uk/, specifically here http://jsfiddle.net/7GvV2/574/
+ *
+ * Housekeeping
+ */
+
+h3, p {
+    margin: 0;
+    padding: 0 0 .5em;
+}
+
+/*
+ * Caption component
+ */
+.caption {
+    position: relative;
+    overflow: hidden;
+
+    /* Only the -webkit- prefix is required these days */
+    -webkit-transform: translateZ(0);
+            transform: translateZ(0);
+}
+
+.caption::before {
+    content: ' ';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: transparent;
+    transition: background .35s ease-out;
+}
+
+.caption:hover::before {
+    background: rgba(0, 0, 0, .5);
+}
+
+.caption__media {
+    display: block;
+    min-width: 100%;
+    max-width: 100%;
+    height: auto;
+}
+
+.caption__overlay {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: 10px;
+    color: white;
+
+    -webkit-transform: translateY(100%);
+            transform: translateY(100%);
+
+    transition: -webkit-transform .35s ease-out;
+    transition:         transform .35s ease-out;
+}
+
+.caption:hover .caption__overlay {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+}
+
+.caption__overlay__title {
+    -webkit-transform: translateY( -webkit-calc(-100% - 10px) );
+            transform: translateY( calc(-100% - 10px) );
+
+    transition: -webkit-transform .35s ease-out;
+    transition:         transform .35s ease-out;
+}
+
+.caption:hover .caption__overlay__title {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
 }

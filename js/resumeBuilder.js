@@ -12,7 +12,8 @@ var bio = {
     'location':'Mountain View, CA'
   },
   'welcomeMessage':'Experienced software engineer now in a management role that strongly focuses on ownership, mentoring, and people growth',
-  'skills': ['Java','Javascript','Project Management','Product Management','People Lead'],
+  'skills': ['Java','HTML & CSS','Javascript'],
+  'lead' : ['People Lead','Product Management','Project Management'],
   'biopic':'images/zen.jpg'
 }
 
@@ -100,7 +101,10 @@ var project = {
     'dates':'Publication: August 19, 2014 - Filing: December 3, 2013',
     'description':'<i>Abstract</i>: An interactive, customizable, user interaction data analysis system is disclosed. The system may be configured to provide cohort-based analysis and/or graphical visualizations of user interaction data to a system operator. User interaction data may be obtained, for example, as users interact with one or more software applications. In various embodiments, interactive and customizable visualizations and analysis provided by the system may be based on user interaction data aggregated across groups of users (also referred to as cohorts of users), across particular time frames, and/or from particular software and/or computer-based applications. According to various embodiments, the system may enable insights into, for example, user interaction patterns, the frequency of software application features accessed, the performance of various aspects of software applications, and/or crashes of software applications, among others.',
     'images': [
-    'images/cohort1.png'
+    {
+      url: 'images/cohort1.png',
+      linkUrl: 'https://www.google.com/patents/US8812960'
+    }
     ]
   },
   {
@@ -108,8 +112,14 @@ var project = {
     'dates':'Publication: September 18, 2014 - Filing: December 19, 2013',
     'description':'<i>Abstract</i>: Computer-implemented systems and methods are disclosed for providing a tagging interface for tagging external content. In accordance with some embodiments, a method is provided for tagging content external to a database system. The method comprises accessing the external content via a web browser of an electronic device. The method also comprises enhancing the web browser by providing a tagging interface for tagging at least a portion of the external content. The method further comprises receiving created tag associated with a tagged portion of the external document content, and exporting the external content and the received tag to the database system. The tagging interface can also provide an option to export the created tag to an internal database system.',
     'images': [
-    'images/tagging1.png',
-    'images/tagging2.png'
+    {
+      url: 'images/tagging1.png',
+      linkUrl: 'https://www.google.com/patents/US20140282121'
+    },
+    {
+      url: 'images/tagging2.png',
+      linkUrl: 'https://www.google.com/patents/US20140282121'
+    }
     ]
   }
   ]
@@ -131,14 +141,24 @@ bio.display = function() {
     $('#topContacts').append(formattedContact);
   }
 
+  $("#header").append(HTMLskillsAndLeadStart);
   if (bio.skills && bio.skills.length > 0) {
-  	$('#header').append(HTMLskillsStart);
+  	$('#skillsAndLead').append(HTMLskillsStart);
   	var formattedSkill;
     var skillLen = bio.skills.length;
   	for (var i = 0; i < skillLen; i++) {
   		formattedSkill = HTMLskills.replace('%data%',bio.skills[i]);
   		$('#skills').append(formattedSkill);
   	}
+  }
+  if (bio.lead && bio.lead.length > 0) {
+    $('#skillsAndLead').append(HTMLleadStart);
+    var formattedLead;
+    var leadLen = bio.lead.length;
+    for (var i = 0; i < leadLen; i++) {
+      formattedLead = HTMLlead.replace('%data%',bio.lead[i]);
+      $('#lead').append(formattedLead);
+    }
   }
 };
 bio.display();
@@ -171,8 +191,11 @@ project.display = function() {
     var p = project.project[i];
     if (p.images.length > 0) {
       var imgLen = p.images.length;
-      for (var j = 0; j < imgLen; j++) {
-        var formattedImage = HTMLprojectImage.replace('%data%', p.images[j]);
+      for (var j = (imgLen-1); j >= 0; j--) {
+        var img = p.images[j];
+        var formattedImage = HTMLprojectImage.replace('%imgsrc%', img.url);
+        formattedImage = formattedImage.replace('%name%', 'Fig '+ (j+1));
+        formattedImage = formattedImage.replace('%url%', img.linkUrl);
         $('.project-entry:last').append(formattedImage);
       }
     }
