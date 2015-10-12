@@ -2,11 +2,7 @@
 This is empty on purpose! Your code to build the resume will go here.
 */
 
- // var awesomeThoughts = "I am zen and I'm awesome";
- // var funThoughts = awesomeThoughts.replace("awesome","fun");
- // $("#main").append(funThoughts);
-
- var bio = {
+var bio = {
  	"name":"Zen Sun",
  	"role":"Web Dev",
  	"welcomeMessage":"Welcome to Zen's resume",
@@ -67,7 +63,7 @@ var project = {
   "project" : [
   {
     "title":"Patent US 8812960 B1: Cohort-based presentation of user interaction data",
-    "dates":"August 19 2014",
+    "dates":"Publication: August 19, 2014 - Filing: December 3, 2013",
     "description":"Abstract: An interactive, customizable, user interaction data analysis system is disclosed. The system may be configured to provide cohort-based analysis and/or graphical visualizations of user interaction data to a system operator. User interaction data may be obtained, for example, as users interact with one or more software applications. In various embodiments, interactive and customizable visualizations and analysis provided by the system may be based on user interaction data aggregated across groups of users (also referred to as cohorts of users), across particular time frames, and/or from particular software and/or computer-based applications. According to various embodiments, the system may enable insights into, for example, user interaction patterns, the frequency of software application features accessed, the performance of various aspects of software applications, and/or crashes of software applications, among others.",
     "images": [
     "images/cohort1.png"
@@ -75,7 +71,7 @@ var project = {
   },
   {
     "title":"Patent US 20140282121 A1: Systems and methods for providing a tagging interface for external content",
-    "dates":"September 18, 2014",
+    "dates":"Publication: September 18, 2014 - Filing: December 19, 2013",
     "description":"Abstract: Computer-implemented systems and methods are disclosed for providing a tagging interface for tagging external content. In accordance with some embodiments, a method is provided for tagging content external to a database system. The method comprises accessing the external content via a web browser of an electronic device. The method also comprises enhancing the web browser by providing a tagging interface for tagging at least a portion of the external content. The method further comprises receiving created tag associated with a tagged portion of the external document content, and exporting the external content and the received tag to the database system. The tagging interface can also provide an option to export the created tag to an internal database system.",
     "images": [
     "images/tagging1.png",
@@ -83,9 +79,8 @@ var project = {
     ]
   }
   ]
-
 }
-//bio
+
 bio.display = function() {
   var formattedName = HTMLheaderName.replace("%data%",bio.name);
   var formattedRole = HTMLheaderRole.replace("%data%",bio.role);
@@ -165,7 +160,6 @@ function inName() {
   // Don't delete this line!
   return finalName;
 }
-
 
 project.display = function() {
   var len = project.project.length;
