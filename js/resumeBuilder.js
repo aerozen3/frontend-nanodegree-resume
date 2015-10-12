@@ -11,7 +11,7 @@ var bio = {
     'twitter':'@zennard',
     'location':'Mountain View, CA'
   },
-  'welcomeMessage':'Welcome to Zen\'s resume',
+  'welcomeMessage':'Experienced software engineer now in a management role that strongly focuses on ownership, mentoring, and people growth',
   'skills': ['Java','Javascript','Project Management','Product Management','People Lead'],
   'biopic':'images/zen.jpg'
 }
@@ -120,18 +120,18 @@ bio.display = function() {
   var formattedRole = HTMLheaderRole.replace('%data%',bio.role);
   var formattedWelcome = HTMLwelcomeMsg.replace('%data%',bio.welcomeMessage);
   var formattedPic = HTMLbioPic.replace('%data%',bio.biopic);
-  $('#header').append(formattedName);
-  $('#header').append(formattedRole);
-  $('#header').append(formattedWelcome);
+  $('#header').prepend(formattedRole);
+  $('#header').prepend(formattedName);
   $('#header').append(formattedPic);
+  $('#header').append(formattedWelcome);
 
   for (var j in bio.contacts) {
     var formattedContact = HTMLcontactGeneric.replace('%contact%',j);
     formattedContact = formattedContact.replace('%data%',bio.contacts[j]);
-    $('#header').append(formattedContact);
+    $('#topContacts').append(formattedContact);
   }
 
-  if (bio.skills.length > 0) {
+  if (bio.skills && bio.skills.length > 0) {
   	$('#header').append(HTMLskillsStart);
   	var formattedSkill;
     var skillLen = bio.skills.length;

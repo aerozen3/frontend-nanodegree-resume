@@ -64,10 +64,14 @@ h2,
 h3,
 h4,
 h5 {
-  padding:10px 5%;
+  padding:0px 5%;
 
 }
 
+hr {
+  margin-top:10px;
+  margin-bottom:10px;
+}
 
 .date-text {
   font-style: italic;
@@ -100,7 +104,7 @@ a {
 }
 
 .welcome-message {
-  font-style: italic;
+  font-style: bold;
   font-size: 18px;
   color: #0072e2;
   line-height: 28px;
@@ -109,6 +113,8 @@ a {
 #skills-h3 {
   color: #0072e2;
   display: none;
+  margin-bottom: 3px;
+  font-style: normal;
 }
 
 .blue {
@@ -133,8 +139,10 @@ a {
   background-color: #4a4a4a;
 }
 
-#navbar {
-  padding: 0 5%;
+.navbar-default {
+  padding-top: 0px;
+  padding-bottom: 0px;
+  margin-bottom: 0px;
 }
 /* TODO: Replace with image later */
 #header {
@@ -161,7 +169,8 @@ a {
 
 .biopic {
   float: left;
-  margin: 10px;
+  margin-right: 10px;
+  margin-bottom: 10px;
   padding: 0px;
   width: 200px;
   display: none;
@@ -178,6 +187,10 @@ a {
 
 span {
   padding: 5px;
+}
+
+.no-padding {
+  padding: 0px;
 }
 
 .caret {
