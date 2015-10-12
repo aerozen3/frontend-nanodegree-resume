@@ -9,6 +9,7 @@ var bio = {
  	"contacts" : {
     "email":"zennard [[at]] gmail.com",
     "github":"https://github.com/aerozen3",
+    "twitter":"@zennard",
     "location": "Mountain View, CA"
   },
   "skills" : ["Java","Javascript","Project Management","Product Management","People Lead"]
@@ -84,9 +85,12 @@ var project = {
 bio.display = function() {
   var formattedName = HTMLheaderName.replace("%data%",bio.name);
   var formattedRole = HTMLheaderRole.replace("%data%",bio.role);
-
+  var formattedWelcome = HTMLwelcomeMsg.replace("%data%",bio.welcomeMessage);
+  var formattedPic = HTMLbioPic.replace("%data%","images/zen.jpg");
   $("#header").append(formattedName);
   $("#header").append(formattedRole);
+  $("#header").append(formattedWelcome);
+  $("#header").append(formattedPic);
 
   for (var j in bio.contacts) {
     var formattedContact = HTMLcontactGeneric.replace("%contact%",j);
