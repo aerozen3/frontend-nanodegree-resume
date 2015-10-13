@@ -22,8 +22,6 @@ need to load. You'll see a lot of <link>s to CSS files for styles and
   <!-- Tells the browser what the title of this page should be. -->
   <title>Zen's Resume</title>
 
-
-
   <!--
   jQuery is a common JavaScript library for reading and making changes to the
   Document Object Model (DOM). The DOM is a tree that contains information
@@ -38,27 +36,11 @@ need to load. You'll see a lot of <link>s to CSS files for styles and
   you can't accomplish with vanilla (regular) JavaScript.
   -->
   <!-- <script src="js/jQuery.js"></script> -->
-  <script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
-
-  <script type="text/javascript" src="js/bootstrap.min.js"></script>
 
   <!-- Load the page styles. -->
   <link rel="stylesheet" href="css/bootstrap.min.css">
-  <script type="text/javascript" src="bower_components/webcomponentsjs/webcomponents.min.js"></script>
   <link rel="import" href="elements/image-caption.html">
-
   <link href="css/style.css" rel="stylesheet">
-
-  <!-- More on helper.js in the class -->
-  <script src="js/helper.js"></script>
-
-
-
-  <!--
-  Uncomment the <script> tag below when you're ready to add an interactive
-  Google Map to your resume!
-  -->
- <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?libraries=places"></script>
 
   <meta name="viewport" content="width=device-width">
 </head>
@@ -90,25 +72,25 @@ need to load. You'll see a lot of <link>s to CSS files for styles and
                   <span class="icon-bar"></span>
                   <span class="icon-bar"></span>
                 </button>
-                <a id="navbar-brand" class="navbar-brand" href="#">Zen's resume</a>
+                <a id="navbar-brand" class="navbar-brand" href="#">Zen</a>
               </div>
 
               <!-- Collect the nav links, forms, and other content for toggling -->
               <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
-                  <li class="active"><a href="#">Home<span class="sr-only">(current)</span></a></li>
+                  <li class="active"><a href="#">Resume<span class="sr-only">(current)</span></a></li>
                   <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Portfolio <span class="caret"></span></a>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Navigation <span class="caret"></span></a>
                     <ul class="dropdown-menu">
-                      <li><a href="https://github.com/udacity/Appify">Appify</a></li>
-                      <li><a href="https://github.com/udacity/Sunflower">Sunflower</a></li>
-                      <li><a href="https://github.com/udacity/Bokeh">Bokeh</a></li>
+                      <li><a href="http://aerozen3.github.io">Home page</a></li>
+                      <li><a href="https://github.com/aerozen3/aerozen3.github.io">Webpage Github</a></li>
+                      <li role="separator" class="divider"></li>
+                      <li><a href="https://github.com/aerozen3">Main Github</a></li>
                     </ul>
                   </li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
-                  <li><a href="#">About</a></li>
-                  <li><a href="#">Contact</a></li>
+                  <li><a href="https://www.linkedin.com/in/zennard">LinkedIn</a></li>
                 </ul>
               </div><!-- /.navbar-collapse -->
             </div><!-- /.container-fluid -->
@@ -116,17 +98,17 @@ need to load. You'll see a lot of <link>s to CSS files for styles and
         </div>
     </div>
     <div style="clear: both;"></div>
-    <div class = "row gray">
+    <div class="row gray">
       <div id="workExperience" class="col-md-12">
         <h2>Work Experience</h2>
       </div>
     </div>
-    <div class = "row">
+    <div class="row">
       <div id="projects" class="col-md-12">
         <h2>Projects</h2>
       </div>
     </div>
-    <div class = "row gray">
+    <div class="row gray">
       <div id="education" class="col-md-4">
         <h2>Education</h2>
       </div>
@@ -143,6 +125,11 @@ need to load. You'll see a lot of <link>s to CSS files for styles and
     </div>
   </div>
 
+  <!-- scripts to the bottom of body -->
+  <script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
+  <script type="text/javascript" src="js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="bower_components/webcomponentsjs/webcomponents.min.js"></script>
+  <script src="js/helper.js"></script>
   <!--
   The next line tells the browser where to download the JavaScript file you'll be
   writing. In resumeBuilder.js, you'll be writing code that builds the resume
@@ -150,6 +137,11 @@ need to load. You'll see a lot of <link>s to CSS files for styles and
   -->
   <script src="js/resumeBuilder.js"></script>
 
+  <!--
+  Uncomment the <script> tag below when you're ready to add an interactive
+  Google Map to your resume!
+  -->
+  <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?libraries=places"></script>
 
   <!--
   These scripts are written in JavaScript. You'll be breaking them down as part of
