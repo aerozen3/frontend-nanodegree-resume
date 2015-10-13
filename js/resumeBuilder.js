@@ -24,14 +24,16 @@ var education = {
     'degree':'Masters of Engineering',
     'dates':2005,
     'location':'Ithaca, NY',
-    'major':['Computer Science']
+    'major':['Computer Science'],
+    'url':'http://www.cornell.edu/'
   },
   {
     'name':'Cornell University',
     'degree':'BS',
     'dates':2004,
     'location':'Ithaca, NY',
-    'major':['Computer Science','Electrical & Computer Engineering']
+    'major':['Computer Science','Electrical & Computer Engineering'],
+    'url':'http://www.cornell.edu/'
   }
   ],
   'onlineCourses': [
@@ -75,21 +77,24 @@ var work = {
     'title': 'Engineering Team Lead',
     'location': 'Palo Alto, CA',
     'dates': 'January 2013 - Current',
-    'description': '<ul><li>Currently managing 25 engineers across three multidisciplinary teams, composed of back-end & front-end developers, designers, product managers, quality assurance, and perf engineers across the country</li><li>Competed for and secured a critical multi-million dollar contract, creating a new business area for Palantir</li><li>Subsequently grew a new team from 0 to 20+ and promoted new leads from within to support the business area</li><li>Took over a struggling mobile product and overcame team morale issues to meet customer deadlines while also addressing technical debt within native Android and iOS clients</li><li>Researched, created, promoted, and supported our usage analytics platform which logs user driven events from our Java and web workspaces, which is now widely used across most of our customers and products </ul>'
+    'description': '<ul><li>Currently managing 25 engineers across three multidisciplinary teams, composed of back-end & front-end developers, designers, product managers, quality assurance, and perf engineers across the country</li><li>Competed for and secured a critical multi-million dollar contract, creating a new business area for Palantir</li><li>Subsequently grew a new team from 0 to 20+ and promoted new leads from within to support the business area</li><li>Took over a struggling mobile product and overcame team morale issues to meet customer deadlines while also addressing technical debt within native Android and iOS clients</li><li>Researched, created, promoted, and supported our usage analytics platform which logs user driven events from our Java and web workspaces, which is now widely used across most of our customers and products </ul>',
+    'url': 'https://www.palantir.com/'
   },
   {
     'employer': 'Palantir Technologies',
     'title': 'Software Engineer',
     'location': 'Palo Alto, CA',
     'dates': 'November 2006 - January 2013',
-    'description': '<ul><li>Optimized Palantir\'s Java UI workspace by an order of magnitude, handling highly linked data, by reducing memory consumption and passing IDs over Java objects</li><li>Worked directly on-site with end-users to gather requirements and deliver customized plugins to ease and enhance user workflows</li><li>Used Java Swing, UX design, concurrency, unit tests, end-to-end testing, to build the early stages of Palantir\'s Government workspace platform</li><li>Mentored and converted multiple interns to full time, focusing on constant feedback to help grow the team</li></ul>'
+    'description': '<ul><li>Optimized Palantir\'s Java UI workspace by an order of magnitude, handling highly linked data, by reducing memory consumption and passing IDs over Java objects</li><li>Worked directly on-site with end-users to gather requirements and deliver customized plugins to ease and enhance user workflows</li><li>Used Java Swing, UX design, concurrency, unit tests, end-to-end testing, to build the early stages of Palantir\'s Government workspace platform</li><li>Mentored and converted multiple interns to full time, focusing on constant feedback to help grow the team</li></ul>',
+    'url': 'https://www.palantir.com/'
   },
   {
     'employer': 'Autodesk',
     'title': 'Computer Programmer Intern',
     'location': 'Waltham, MA',
     'dates': 'June 2004 - August 2004',
-    'description': '<ul><li>Added map annotations to Rivet (design and construction CAD) in C++</li></ul>'
+    'description': '<ul><li>Added map annotations to Rivet (design and construction CAD) in C++</li></ul>',
+    'url': 'http://www.autodesk.com/products/revit-family/overview'
   }
   ]
 };
@@ -100,10 +105,11 @@ var project = {
     'title':'Patent US 8812960 B1: Cohort-based presentation of user interaction data',
     'dates':'Publication: August 19, 2014 - Filing: December 3, 2013',
     'description':'<i>Abstract</i>: An interactive, customizable, user interaction data analysis system is disclosed. The system may be configured to provide cohort-based analysis and/or graphical visualizations of user interaction data to a system operator. User interaction data may be obtained, for example, as users interact with one or more software applications. In various embodiments, interactive and customizable visualizations and analysis provided by the system may be based on user interaction data aggregated across groups of users (also referred to as cohorts of users), across particular time frames, and/or from particular software and/or computer-based applications. According to various embodiments, the system may enable insights into, for example, user interaction patterns, the frequency of software application features accessed, the performance of various aspects of software applications, and/or crashes of software applications, among others.',
+    'url':'https://www.google.com/patents/US8812960',
     'images': [
     {
-      url: 'images/cohort1.png',
-      linkUrl: 'https://www.google.com/patents/US8812960'
+      'url': 'images/cohort1.png',
+      'linkUrl': 'https://www.google.com/patents/US8812960'
     }
     ]
   },
@@ -111,14 +117,15 @@ var project = {
     'title':'Patent US 20140282121 A1: Systems and methods for providing a tagging interface for external content',
     'dates':'Publication: September 18, 2014 - Filing: December 19, 2013',
     'description':'<i>Abstract</i>: Computer-implemented systems and methods are disclosed for providing a tagging interface for tagging external content. In accordance with some embodiments, a method is provided for tagging content external to a database system. The method comprises accessing the external content via a web browser of an electronic device. The method also comprises enhancing the web browser by providing a tagging interface for tagging at least a portion of the external content. The method further comprises receiving created tag associated with a tagged portion of the external document content, and exporting the external content and the received tag to the database system. The tagging interface can also provide an option to export the created tag to an internal database system.',
+    'url':'https://www.google.com/patents/US20140282121',
     'images': [
     {
-      url: 'images/tagging1.png',
-      linkUrl: 'https://www.google.com/patents/US20140282121'
+      'url': 'images/tagging1.png',
+      'linkUrl': 'https://www.google.com/patents/US20140282121'
     },
     {
-      url: 'images/tagging2.png',
-      linkUrl: 'https://www.google.com/patents/US20140282121'
+      'url': 'images/tagging2.png',
+      'linkUrl': 'https://www.google.com/patents/US20140282121'
     }
     ]
   }
@@ -170,6 +177,7 @@ work.display = function() {
 		$('#workExperience').append(HTMLworkStart);
 
 		var formattedEmployer = HTMLworkEmployer.replace('%data%', work.jobs[i].employer);
+    formattedEmployer = formattedEmployer.replace('%url%', work.jobs[i].url);
 		var formattedTitle = HTMLworkTitle.replace('%data%', work.jobs[i].title);
 		var formattedLocation = HTMLworkLocation.replace('%data%', work.jobs[i].location);
 		var formattedDates = HTMLworkDates.replace('%data%', work.jobs[i].dates);
@@ -200,6 +208,7 @@ project.display = function() {
       }
     }
     var formattedProjectTitle = HTMLprojectTitle.replace('%data%', p.title);
+    formattedProjectTitle = formattedProjectTitle.replace('%url%', p.url);
     var formattedProjectDates = HTMLprojectDates.replace('%data%', p.dates);
 
     var formattedProject = formattedProjectTitle + formattedProjectDates;
@@ -217,6 +226,7 @@ education.display = function() {
     var s = education.schools[i];
     $('#education').append(HTMLschoolStart);
     var formattedSchoolName = HTMLschoolName.replace('%data%', s.name);
+    formattedSchoolName = formattedSchoolName.replace('%url%', s.url)
     var formattedSchoolDegree = HTMLschoolDegree.replace('%data%', s.degree);
     $('.education-entry:last').append(formattedSchoolName+formattedSchoolDegree);
 
@@ -241,13 +251,15 @@ education.display = function() {
       $('#education').append(HTMLschoolStart);
       var o = education.onlineCourses[i];
       var formattedOnlineTitle = HTMLonlineTitle.replace('%data%', o.title);
+      formattedOnlineTitle = formattedOnlineTitle.replace('%url%', o.url);
       var formattedOnlineSchool = HTMLonlineSchool.replace('%data%', o.school);
       $('.education-entry:last').append(formattedOnlineTitle+formattedOnlineSchool);
 
       var formattedOnlineDates = HTMLonlineDates.replace('%data%', o.date);
       $('.education-entry:last').append(formattedOnlineDates);
-      var formattedOnlineUrl = HTMLonlineURL.replace('%data%', o.url);
-      $('.education-entry:last').append(formattedOnlineUrl);
+      // This isn't pretty or useful
+      // var formattedOnlineUrl = HTMLonlineURL.replace('%data%', o.url);
+      // $('.education-entry:last').append(formattedOnlineUrl);
     }
   }
 
