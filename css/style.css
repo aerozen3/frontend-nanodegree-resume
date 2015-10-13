@@ -139,7 +139,6 @@ a {
 
 .gray {
   background-color: #f3f3f3;
-  padding-bottom: 10px;
 }
 
 .dark-gray {
@@ -208,7 +207,7 @@ a {
 }
 
 span {
-  padding: 5px;
+  padding: 0 5px;
 }
 
 .no-padding {
@@ -219,8 +218,10 @@ span {
   padding: 0px;
 }
 
-#lets-connect {
+.footer {
   text-align: center;
+  padding: 0px;
+  margin: 0px;
 }
 
 /* Media queries to handle various device widths */
