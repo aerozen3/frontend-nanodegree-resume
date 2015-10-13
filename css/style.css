@@ -276,7 +276,7 @@ span {
  * Housekeeping
  */
 
-h3, p {
+.poppup {
     margin: 0;
     padding: 0 0 .5em;
 }
